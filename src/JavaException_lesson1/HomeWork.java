@@ -7,11 +7,11 @@ import java.util.Arrays;
 
 public class HomeWork {
     public static void main(String[] args) {
-        int[] arr1 = {65,565,5,44,65};
-        int[] arr2 = {45,78,2,44,56};
-        int[] rezult = dividingArray(arr1,arr2);
-        String rezOfRez = Arrays.toString(rezult);
-        System.out.println(rezOfRez);
+//        float[] arr1 = {65,565,5,44,65};
+//        int[] arr2 = {45,78,2,44,56};
+//        float[] rezult = dividingArray(arr1,arr2);
+//        String rezOfRez = Arrays.toString(rezult);
+//        System.out.println(rezOfRez);
     }
     /* 1 Задание*/
     // 1)
@@ -57,19 +57,19 @@ public class HomeWork {
 
     /* 4 задание */
 
-    public static int[] dividingArray(int[] arr1, int[] arr2) {
+    public static float[] dividingArray(float[] arr1, int[] arr2) {
         if (arr1.length != arr2.length) {
             throw new RuntimeException("Arrays have different size");
         }
 
-        int[] rezult2 = new int[arr1.length];
-        for (int i = 0; i < rezult2.length; i++) {
+        float[] rezult = new float[arr1.length];
+        for (int i = 0; i < rezult.length; i++) {
             if (arr2[i] == 0) {
                 throw new RuntimeException("One of the array values is zero");
             }
-            rezult2[i] = arr1[i] / arr2[i];
+            rezult[i] = arr1[i] / arr2[i];
         }
-        return rezult2;
+        return rezult;
     }
 
 }
