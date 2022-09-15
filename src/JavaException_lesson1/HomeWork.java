@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.Arrays;
 
-
 public class HomeWork {
     public static void main(String[] args) {
 //        float[] arr1 = {65,565,5,44,65};
@@ -17,7 +16,7 @@ public class HomeWork {
     // 1)
         public static void f1() {
         File f = new File("X://java/file.txt");
-//            FileReader fr = new FileReader(f);
+            //FileReader fr = new FileReader(f);
         }
     //2)
         public static void f2() {
