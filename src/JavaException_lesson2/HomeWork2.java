@@ -108,24 +108,23 @@ public class HomeWork2 {
    * что пустые
    * строки вводить нельзя.
    */
-
-   public class EmptyString extends Exception {
+  // Определение своего исключения
+  public class EmptyString extends Exception { 
     public EmptyString(String message) {
       super(message);
     }
-   }
-  public static void main(String[] args) throws EmptyString {
-    Scanner scan = new Scanner(System.in);
-    String line = scan.nextLine();
-    checkNonEmptyString(line);
-  }
-
-  public static void checkNonEmptyString(String str) throws EmptyString {
-    if (str == null || str.isEmpty() || str.trim().isEmpty()) {
-      throw new EmptyString("Нельзя вводить пустые строки!");
+  // Запуск программы
+    public static void main(String[] args) {
+      Scanner scan = new Scanner(System.in);
+      String line = scan.nextLine();
+      checkNonEmptyString(line);
+    }
+  // Метод для проверки строки
+    public static void checkNonEmptyString(String str) throws EmptyString {
+      if (str == null || str.isEmpty() || str.trim().isEmpty()) {
+        throw new EmptyString("Нельзя вводить пустые строки!");
+      }
     }
   }
-
-  
 
 }
