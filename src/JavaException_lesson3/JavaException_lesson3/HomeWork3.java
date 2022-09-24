@@ -1,26 +1,25 @@
 package JavaException_lesson3;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class HomeWork3 {
-  public static void main(String[] args) throws FormException {
+  public static void main(String[] args) throws FormException, IOException {
     checkForm();
   }
 
-  public static void checkForm() throws FormException {
+  public static void checkForm() throws FormException, IOException {
     String x = "Enter your full name, date of birth (dd.mm.yyyy), phone number (81234567890) and gender (m/f) separated by a space";
     System.out.println(x);
     Scanner scanner = new Scanner(System.in);
+    File output = new File("output.txt");
+    FileWriter writer = new FileWriter(output, true);
 
-    // BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-    try (scanner) {
+    try (scanner; writer) {
       String answer = scanner.nextLine();
       String[] words = answer.split(" ");
       String[] fullName = new String[3];
@@ -28,9 +27,7 @@ public class HomeWork3 {
       String phoneNumber = null;
       String gender = null;
       ArrayList<String> checkWords = new ArrayList<>();
-      // System.out.println(dateOfBirth);
-      // System.out.println(phoneNumber);
-      // System.out.println(gender);
+
       if (words.length < 6) {
         throw new FormException("You have not entered all the data");
       } else {
@@ -47,9 +44,7 @@ public class HomeWork3 {
           fullName[i] = "<" + fullName[i] + ">";
           checkWords.add(fullName[i]);
         }
-        //System.out.println(Arrays.toString(fullName));
       }
-
 
       if (!Pattern.matches("[0-9]{2}.[0-9]{2}.[0-9]{4}", dateOfBirth)) {
         throw new FormException("The date of birth format is incorrect");
@@ -68,15 +63,14 @@ public class HomeWork3 {
       if (gender == "m" || gender == "f") {
         throw new FormException("In normal countries there are only 2 genders");
       } else {
-        gender = "<" + gender + ">";
+        gender = "<" + gender + ">" + "\n";
         checkWords.add(gender);
       }
+      String filePrint = String.join("", checkWords);
+      writer.append(filePrint);
 
-
-      
+    } catch (IOException e) {
+      e.printStackTrace();
     }
-    // catch (IOException e) {
-    // e.printStackTrace();
-
   }
 }
