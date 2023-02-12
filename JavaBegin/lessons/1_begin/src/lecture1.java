@@ -1,7 +1,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class App {
+public class Lecture1 {
   public static void main(String[] args) {
     try (FileWriter fw = new FileWriter("testfile.txt", true)) {
       fw.write("line 1");
@@ -16,4 +16,3 @@ public class App {
     }
   }
 }
-
