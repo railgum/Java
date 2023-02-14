@@ -6,4 +6,5 @@ lib
 .vscode
 files
 out
-1*
+1_begin.iml
+README.md
