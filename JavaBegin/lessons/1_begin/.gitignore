@@ -1,2 +1,9 @@
 src/L*.java
 src/S*.java
+src/P*
+lib
+.idea
+.vscode
+files
+out
+1*
