@@ -1,3 +1,4 @@
+// import java.util.regex.Pattern;
 
 public class Homework2 {
     public static void main(String[] args) {
@@ -7,10 +8,13 @@ public class Homework2 {
         // выход:
         // Добрый день. Как дела. Все хорошо.
 
-        stringNormal("Добрый день Как дела Все хорошо");
+        System.out.println(stringNormal("Добрый     день     Как   дела    Все     хорошо"));
     }
 
+    // проверок строки нужно больше - находить ".,!?" и др.
     static String stringNormal(String str) {
-
+        str = str.replaceAll("\s+", " "); // убираем лишние пробелы
+        str = str.replaceAll("(?![А-яЁё]*\s*[а-яё])", ".");
+        return str;
     }
 }

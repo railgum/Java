@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+
+// import java.util.ArrayList;
 //import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -27,17 +28,17 @@ public class Homework1 {
   }
 
   // 2
-  static List<Integer> getSimple(int max) {
-    List<Integer> res = new ArrayList<>();
-    if (max > 0)
-      res.add(2);
-    for (int i = 3; i <= max; i += 2) {
-      if (isSimple(i, res)) {
-        res.add(i);
-      }
-    }
-    return res;
-  }
+  // static List<Integer> getSimple(int max) {
+  // List<Integer> res = new ArrayList<>();
+  // if (max > 0)
+  // res.add(2);
+  // for (int i = 3; i <= max; i += 2) {
+  // if (isSimple(i, res)) {
+  // res.add(i);
+  // }
+  // }
+  // return res;
+  // }
 
   static boolean isSimple(int n, List<Integer> res) {
     for (int i = 0; i < res.size(); i++) {
