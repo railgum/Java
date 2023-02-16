@@ -1,13 +1,16 @@
 
 // import java.util.ArrayList;
 //import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 // 1.Вычислить n-ое треугольное число(сумма чисел от 1 до n), n! (произведение чисел от 1 до n)
 // 2.Вывести все простые числа от 1 до 100
 // 3.Реализовать простой калькулятор
-// 4.*Задано уравнение вида q + w = e, q, w, e >= 0. Некоторые цифры могут быть заменены знаком вопроса, например 2? + ?5 = 69. Требуется восстановить выражение до верного равенства. Предложить хотя бы одно решение или сообщить, что его нет.
+// 4.*Задано уравнение вида q + w = e, q, w, e >= 0. Некоторые цифры могут быть заменены знаком вопроса, 
+//    например 2? + ?5 = 69. Требуется восстановить выражение до верного равенства. 
+//    Предложить хотя бы одно решение или сообщить, что его нет.
 
 public class Homework1 {
   // 1
@@ -87,6 +90,42 @@ public class Homework1 {
     return res;
   }
 
+  // 4
+
+  static void checkExpression(String str) {
+    // складываем слагаемые и результат в массив
+    String[] terms = str.split("\\s+(\\+|\\=)\\s+");
+    // с помощью функции getDigit преобразуем массив строк в массив чисел
+    int[] digits = new int[3];
+    for (int i = 0; i < digits.length; i++) {
+      digits[i] = (getDigit(terms[i]));
+    }
+    // находим разницу между результатом и суммой слагаемых
+    int diff = digits[2] - (digits[0] + digits[1]);
+    if (diff < 0) {
+      System.out.println("Решения нет");
+    } else {
+      // находим недостающие десятки и единицы
+      int unit = diff % 10;
+      int decimal = diff - unit;
+      System.out.printf("Как-то так: %d + %d = %d \n", unit + digits[0], decimal + digits[1], digits[2]);
+    }
+
+  }
+
+  // функция вместо знака "?" подставляет "0"
+  static int getDigit(String str) {
+    str = str.replaceAll("\\?", "0");
+    int i = 0;
+    try {
+      // преобразуем в число
+      i = Integer.parseInt(str.trim());
+    } catch (NumberFormatException nfe) {
+      System.out.println("NumberFormatExeption: " + nfe.getMessage());
+    }
+    return i;
+  }
+
   public static void main(String[] args) {
     // 1
     // System.out.println(nTriangle(12)); // 78
@@ -101,5 +140,8 @@ public class Homework1 {
     // 3
 
     // System.out.printf("%.02f", calc());
+
+    // 4
+    // checkExpression("2? + ?4 = 69");
   }
 }
