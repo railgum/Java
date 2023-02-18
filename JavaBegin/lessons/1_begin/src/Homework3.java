@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.IntStream;
 
 public class Homework3 {
@@ -11,8 +8,8 @@ public class Homework3 {
 //        3* Реализовать алгоритм сортировки слиянием
 //        Формат сдачи: файл с расширением java или ссылка на гит
 
-        // 1
-
+        // 1--------------------------------------------------------------
+/*
         ArrayList<Integer> arrInt = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размер листа");
@@ -47,10 +44,35 @@ public class Homework3 {
         System.out.println("Min - " + minValue);
         System.out.println("Max - " + maxValue);
         System.out.println("Average - " + average/arrLength);
+*/
+        // 2--------------------------------------------------------------
+/*
+        ArrayList<Integer> arrInt_2 = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите размер листа");
+        int arrLength_2 = scanner.nextInt();
+        scanner.close();
+        for (int i = 0; i < arrLength_2; i++) {
+            arrInt_2.add(generateRandomIntIntRange(0,20));
+        }
+        System.out.println(arrInt_2);
+        Iterator<Integer> iterator = arrInt_2.iterator();
+        while (iterator.hasNext()){
+            if(iterator.next()%2==0){
+                iterator.remove();
+            }
+        }
+        System.out.println(arrInt_2);
+
+*/
+        // 3--------------------------------------------------------------
+
 
     }
     public static int generateRandomIntIntRange(int min, int max) {
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
     }
+
+
 }
