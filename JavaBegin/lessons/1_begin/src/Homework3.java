@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.IntStream;
 
 public class Homework3 {
     public static void main(String[] args) {
@@ -66,12 +65,65 @@ public class Homework3 {
 
 */
         // 3--------------------------------------------------------------
-
-
+/*
+        ArrayList<Integer> arrInt_3 = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите размер листа");
+        int arrLength = scanner.nextInt();
+        scanner.close();
+        for (int i = 0; i < arrLength; i++) {
+            arrInt_3.add(generateRandomIntIntRange(0,50));
+        }
+        System.out.println(arrInt_3);
+        System.out.println(mergeSort(arrInt_3));
+*/
     }
     public static int generateRandomIntIntRange(int min, int max) {
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
+    }
+
+    public static ArrayList<Integer> mergeSort(ArrayList<Integer> aL){
+        if(aL.size()<2) return aL;
+
+        int middle = aL.size()/2;
+        ArrayList<Integer> leftList=new ArrayList<>();
+        ArrayList<Integer> rightList=new ArrayList<>();
+
+        for (int i = 0; i < middle; i++) {
+            leftList.add(aL.get(i));
+        }
+        for (int i = middle; i < aL.size(); i++) {
+            rightList.add(aL.get(i));
+        }
+        mergeSort(leftList);
+        mergeSort(rightList);
+        merge(aL,leftList,rightList,leftList.size(),rightList.size());
+        return aL;
+    }
+
+    public static void merge(ArrayList<Integer> aL,
+                                           ArrayList<Integer> leftArr,
+                                           ArrayList<Integer> rightArr,
+                                           int left, int right) {
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (i<left && j < right){
+            if(leftArr.get(i) <= rightArr.get(j)){
+                aL.set(k++,leftArr.get(i++)); // ?!
+            }
+            else {
+                aL.set(k++,rightArr.get(j++));
+            }
+        }
+        while (i<left){
+            aL.set(k++,leftArr.get(i++));
+        }
+        while (j<right){
+            aL.set(k++,rightArr.get(j++));
+        }
+
     }
 
 
