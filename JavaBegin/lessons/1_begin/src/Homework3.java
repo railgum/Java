@@ -65,7 +65,7 @@ public class Homework3 {
 
 */
         // 3--------------------------------------------------------------
-
+/*
         ArrayList<Integer> arrInt_3 = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размер листа");
@@ -76,7 +76,7 @@ public class Homework3 {
         }
         System.out.println(arrInt_3);
         System.out.println(mergeSort(arrInt_3));
-
+*/
     }
     public static int generateRandomIntIntRange(int min, int max) {
         Random r = new Random();
