@@ -65,7 +65,7 @@ public class Homework3 {
 
 */
         // 3--------------------------------------------------------------
-/*
+
         ArrayList<Integer> arrInt_3 = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размер листа");
@@ -76,7 +76,7 @@ public class Homework3 {
         }
         System.out.println(arrInt_3);
         System.out.println(mergeSort(arrInt_3));
-*/
+
     }
     public static int generateRandomIntIntRange(int min, int max) {
         Random r = new Random();
@@ -96,6 +96,9 @@ public class Homework3 {
         for (int i = middle; i < aL.size(); i++) {
             rightList.add(aL.get(i));
         }
+        System.out.println(leftList);
+        System.out.println(rightList);
+
         mergeSort(leftList);
         mergeSort(rightList);
         merge(aL,leftList,rightList,leftList.size(),rightList.size());
@@ -123,6 +126,7 @@ public class Homework3 {
         while (j<right){
             aL.set(k++,rightArr.get(j++));
         }
+        //System.out.println(aL);
 
     }
 
