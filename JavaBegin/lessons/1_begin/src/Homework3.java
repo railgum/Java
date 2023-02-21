@@ -74,6 +74,7 @@ public class Homework3 {
         for (int i = 0; i < arrLength; i++) {
             arrInt_3.add(generateRandomIntIntRange(0,50));
         }
+
         System.out.println(arrInt_3);
         System.out.println(mergeSort(arrInt_3));
 */
@@ -96,8 +97,6 @@ public class Homework3 {
         for (int i = middle; i < aL.size(); i++) {
             rightList.add(aL.get(i));
         }
-        System.out.println(leftList);
-        System.out.println(rightList);
 
         mergeSort(leftList);
         mergeSort(rightList);
