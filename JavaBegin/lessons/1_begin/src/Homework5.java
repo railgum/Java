@@ -35,21 +35,6 @@ public class Homework5 {
                 } else res.clear();
             }
         }
-// через while
-        /*
-        int i=0;
-        while (i<arr1.length-1) {
-            int j=0;
-            while (j<=arr2.length-1){
-                if (arr1[i] == arr2[j]){
-                    res.add(arr1[i]);
-                    i++;
-                }
-                j++;
-            }
-            i++;
-        }
-        */
         return res;
     }
 
