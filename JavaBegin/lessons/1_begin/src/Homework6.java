@@ -28,8 +28,7 @@ class TreeNode {
     TreeNode left;
     TreeNode right;
 
-    TreeNode(int[] ints) {
-
+    TreeNode() {
     }
 
     TreeNode(int val) {
