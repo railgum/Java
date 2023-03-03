@@ -1,3 +1,5 @@
+package Homework.Main.src;
+
 public class Node {
 
     public Node(Person p1, Relationship re, Person p2) {
