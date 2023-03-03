@@ -1,3 +1,5 @@
+package Homework.Main.src;
+
 public class Person {
     public String fullName;
 
