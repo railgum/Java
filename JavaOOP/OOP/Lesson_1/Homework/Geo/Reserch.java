@@ -11,11 +11,13 @@ public class Reserch {
     }
 
     public ArrayList<String> spend(Person p, Relationship re) {
+//        System.out.println(tree.size());
         for (Node t : tree) {
             if (t.p1.fullName == p.fullName && t.re == re) {
                 result.add(t.p2.fullName);
             }
         }
+        System.out.println(result.size());
         return result;
     }
 
