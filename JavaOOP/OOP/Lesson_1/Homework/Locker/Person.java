@@ -1,8 +1,8 @@
 package Lesson_1.Homework.Locker;
 
 public class Person {
-    public Person() {
-    }
+//    public Person() {
+//    }
     public void openDoor(Locker locker){
         if(!locker.getStatus()){
             locker.setStatus(true);
