@@ -1,4 +1,4 @@
-package Homework.Main.src;
+package Lesson_1.Homework.Geo;
 
 public class Main {
     public static void main(String[] args) {

@@ -4,5 +4,7 @@
         "OOP/Lesson_1/Docs",
         "OOP/Lesson_1",
         "OOP"
-    ]
+    ],
+    "editor.fontSize": 18,
+    "files.autoSave": "onFocusChange"
 }
