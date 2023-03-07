@@ -2,46 +2,30 @@ package Lesson_2.Homework.CatAndHuman;
 
 import java.util.Random;
 
-public class Cat {
-    Random rnd = new Random();
-    private String name;
-    private boolean hungry;
-    private boolean sleep;
+public class Cat extends Animal implements Manageable{
+//    Random rnd = new Random();
 
-    public Cat(String name,boolean hungry, boolean sleep) {
-        this.name = name;
-        this.hungry=hungry;
-        this.sleep=sleep;
+    public Cat(String name, int age, String color) {
+        super(name,age,color);
+    }
+    @Override
+     public void voice() {
+         System.out.println("Мяу");
+     }
+
+    @Override
+    public void eat() {
+        System.out.println("Хочу мя-я-су!");
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public void move() {
+
     }
 
-    public boolean isHungry() {
-        return hungry = rnd.nextBoolean();
+    @Override
+    public void sleep() {
+
     }
 
-    public boolean isSleep() {
-        return sleep= rnd.nextBoolean();
-    }
-
-    public void setHungry(){this.hungry=true;}
-    public void setSleep(){this.sleep=true;}
-
-     public String voice() {
-     return this.name + " говорит мяу";
-     }
-     public String voiceBad() {
-        return this.name + " говорит пф-ф-ф!";
-     }
-     public String voiceSleep(){
-        return "Хр-р-р-р";
-     }
-     public String noHungry(){
-        return "Мя-я-са!";
-     }
-     public String eatAll(){
-        return "Ладно, давай кашу(((";
-     }
 }

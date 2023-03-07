@@ -2,8 +2,9 @@ package Lesson_2.Homework.CatAndHuman;
 
 public class Main {
     public static void main(String[] args) {
-        Cat cat = new Cat("Мурзик", false, false);
-        Human person = new Human();
+        Cat cat = new Cat("Мурзик", 3, "Белый");
+        Person person = new Person("Раиль", 43, "мужчина");
+
 
         System.out.println(person.voice("кис-кис", "Мурзик,"));
         if(!cat.isSleep()){
