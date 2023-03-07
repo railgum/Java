@@ -7,14 +7,20 @@ public class Person {
     public LocalDate birthDay;
     public LocalDate deathDay;
 
-    public Person(String fullName) {
+    public Person(String fullName, LocalDate birthDay, LocalDate deathDay) {
+
         this.fullName = fullName;
+        this.birthDay = birthDay;
+        this.deathDay = deathDay;
     }
 
     public String getFullName() {
+
         return fullName;
     }
-    public LocalDate getBirthDay(){return birthDay;}
+    public LocalDate getBirthDay() {
+        return birthDay;
+    }
 
     public LocalDate getDeathDay() {
         return deathDay;

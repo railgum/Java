@@ -1,5 +1,6 @@
 package Lesson_1.Homework.Geo;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Reserch {
@@ -17,8 +18,11 @@ public class Reserch {
                 result.add(t.p2.fullName);
             }
         }
-        System.out.println(result.size());
+        //System.out.println(result.size());
         return result;
+    }
+    public LocalDate bd(Person p){
+        return p.getBirthDay();
     }
 
 }
