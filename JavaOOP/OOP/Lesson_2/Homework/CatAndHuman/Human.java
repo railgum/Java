@@ -34,6 +34,7 @@ public abstract class Human {
     public void setSex(String sex) {
         this.sex = sex;
     }
+
 }
 
 
