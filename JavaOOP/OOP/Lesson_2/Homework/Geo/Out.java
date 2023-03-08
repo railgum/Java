@@ -4,19 +4,16 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 
-public class Out {
+public interface Out {
 
 
-    public void searchRelationshipToConsole(Person name, GeoTree geoTree, Relationship relationship){
-        System.out.println(new Reserch(geoTree).spend(name,relationship));
+    public void printToConsole(String data){
+        System.out.println(data);
     }
-    public void searchBirthdayToConsole(Person name, GeoTree geoTree){
-        System.out.println(new Reserch(geoTree).bd(name));
-    }
-    public void saveFile(Person name, GeoTree geoTree, Relationship relationship, String path){
+    public void saveFile(String data, String path){
         try(FileOutputStream fos=new FileOutputStream(path + LocalDate.now()))
         {
-            byte[] buffer = new Reserch(geoTree).spend(name,relationship).toString().getBytes();
+            byte[] buffer = data.getBytes();
 
             fos.write(buffer, 0, buffer.length);
             System.out.println("The file has been written");
