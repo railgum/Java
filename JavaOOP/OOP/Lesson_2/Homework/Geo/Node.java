@@ -2,19 +2,20 @@ package Lesson_2.Homework.Geo;
 
 public class Node {
 
-    public Node(Person p1, Relationship re, Person p2) {
-        this.p1 = p1;
-        this.re = re;
-        this.p2 = p2;
+    public Node(Person person1, Relationship relationship, Person person2) {
+        this.person1 = person1;
+        this.person2 = person2;
+        this.relationship = relationship;
     }
 
-    Person p1;
-    Relationship re;
-    Person p2;
+    Person person1;
+    Relationship relationship;
+    Person person2;
+
 
     @Override
     public String toString() {
-        return String.format("<%s %s %s>", p1, re, p2);
+        return String.format("<%s %s %s>", person1, relationship, person2);
     }
 
 }

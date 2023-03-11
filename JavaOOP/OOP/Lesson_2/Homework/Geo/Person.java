@@ -1,28 +1,11 @@
 package Lesson_2.Homework.Geo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class Person {
-    public String fullName;
-    public LocalDate birthDay;
-    public LocalDate deathDay;
-
-    public Person(String fullName, LocalDate birthDay, LocalDate deathDay) {
-
-        this.fullName = fullName;
-        this.birthDay = birthDay;
-        this.deathDay = deathDay;
+public class Person extends Human{
+    public Person(String fullName, String gender, LocalDate birthDay, LocalDate deathDay) {
+        super(fullName, gender, birthDay, deathDay);
     }
 
-    public String getFullName() {
-
-        return fullName;
-    }
-    public LocalDate getBirthDay() {
-        return birthDay;
-    }
-
-    public LocalDate getDeathDay() {
-        return deathDay;
-    }
 }
