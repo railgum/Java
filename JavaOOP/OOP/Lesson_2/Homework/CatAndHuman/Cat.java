@@ -11,7 +11,6 @@ public class Cat extends Animal implements Speak, State {
          System.out.println(talk);
      }
 
-
     @Override
     public void move(String action){
         System.out.println(action);
