@@ -23,7 +23,7 @@ public class Main {
         //gt.printToConsole(gt.searchRelation(irina,children));
         //gt.printToConsole(gt.searchRelation(masha,brother));
         //gt.printToConsole(gt.bornAfterDate(LocalDate.of(1950,1,1)));
-        tagt.printToConsole(gt.getGender("male"));
+        //gt.printToConsole(gt.getGender("male"));
     }
 
 }
