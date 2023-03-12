@@ -1,4 +1,4 @@
-package JavaException_lesson3;
+package JavaException_lesson3_;
 
 import java.io.File;
 import java.io.FileWriter;
