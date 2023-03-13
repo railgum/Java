@@ -10,9 +10,17 @@ public class ExampleFamily implements Out, FamilyTree, Search {
     private ArrayList<Node> tree = new ArrayList<>();
 
     @Override
-    public void appendChild(Person person1, Person person2){
-        tree.add(new Node(person1, Relationship.children, person2));
-        tree.add(new Node(person2, Relationship.parent, person1));
+    public void append(Person person1, Person person2, Relationship relationship){
+/*
+        if(relationship == Relationship.parent){
+            tree.add(new Node(person1, Relationship.children, person2));
+            tree.add(new Node(person2, Relationship.parent, person1));
+        } else if(relationship == Relationship.children){
+            tree.add(new Node(person1, Relationship.parent, person2));
+            tree.add(new Node(person2, Relationship.children, person1));
+        }
+*/
+        tree.add(new Node(person1,relationship,person2));
     }
     @Override
     public void appendBrotherSister(Person person1, Person person2){

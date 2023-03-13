@@ -12,11 +12,11 @@ public class Main {
         Person lena = new Person("Лена","female", LocalDate.of(1984, 11, 2), null);
 
         ExampleFamily gt = new ExampleFamily();
-        gt.appendChild(irina, vasya);
-        gt.appendChild(irina, masha);
-        gt.appendChild(vasya, jane);
-        gt.appendChild(vasya, ivan);
-        gt.appendChild(masha, lena);
+        gt.append(irina, vasya);
+        gt.append(irina, masha);
+        gt.append(vasya, jane);
+        gt.append(vasya, ivan);
+        gt.append(masha, lena);
         gt.appendBrotherSister(vasya, masha);
 
 
