@@ -5,3 +5,4 @@ L*/H*/D*
 # Project exclude paths
 /out/
 ..\.vscode\*
+../out/

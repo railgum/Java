@@ -1,4 +1,4 @@
-package Lesson_2.Homework.Geo;
+package Homework.Geo;
 
 public enum Relationship {
     parent,

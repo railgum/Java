@@ -1,4 +1,4 @@
-package Lesson_2.Homework.Geo;
+package Homework.Geo;
 
 import java.util.ArrayList;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package Lesson_2.Homework.CatAndHuman;
+package Homework.CatAndHuman;
 
 public class Main {
     public static void main(String[] args) {

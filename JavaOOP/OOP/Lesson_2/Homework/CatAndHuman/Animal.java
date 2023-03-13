@@ -1,14 +1,14 @@
 package Lesson_2.Homework.CatAndHuman;
 
-public abstract class Human {
+public abstract class Animal {
     private String name;
     private int age;
-    private String sex;
+    private String color;
 
-    public Human(String name, int age, String sex) {
+    public Animal(String name, int age, String color) {
         this.name = name;
         this.age = age;
-        this.sex = sex;
+        this.color = color;
     }
 
     public String getName() {
@@ -27,14 +27,12 @@ public abstract class Human {
         this.age = age;
     }
 
-    public String getSex() {
-        return sex;
+    public String getColor() {
+        return color;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setColor(String color) {
+        this.color = color;
     }
 
 }
-
-
