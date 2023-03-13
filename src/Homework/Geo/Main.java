@@ -2,6 +2,7 @@ package Homework.Geo;
 
 import java.time.LocalDate;
 
+
 public class Main {
     public static void main(String[] args) {
         Person irina = new Person("Ирина","female", LocalDate.of(1925, 4, 17), LocalDate.of(1998, 12, 8));
@@ -12,12 +13,12 @@ public class Main {
         Person lena = new Person("Лена","female", LocalDate.of(1984, 11, 2), null);
 
         ExampleFamily gt = new ExampleFamily();
-        gt.append(irina, vasya);
-        gt.append(irina, masha);
-        gt.append(vasya, jane);
-        gt.append(vasya, ivan);
-        gt.append(masha, lena);
-        gt.appendBrotherSister(vasya, masha);
+        gt.append(irina, vasya, Relationship.children);
+        gt.append(irina, masha, Relationship.children);
+        gt.append(vasya, jane, Relationship.children);
+        gt.append(vasya, ivan, Relationship.children);
+        gt.append(masha, lena, Relationship.children);
+        gt.append(vasya, masha, Relationship.sister);
 
 
         //gt.printToConsole(gt.searchRelation(irina,children));

@@ -11,7 +11,7 @@ public class ExampleFamily implements Out, FamilyTree, Search {
 
     @Override
     public void append(Person person1, Person person2, Relationship relationship){
-/*
+
         if(relationship == Relationship.parent){
             tree.add(new Node(person1, Relationship.children, person2));
             tree.add(new Node(person2, Relationship.parent, person1));
@@ -19,9 +19,11 @@ public class ExampleFamily implements Out, FamilyTree, Search {
             tree.add(new Node(person1, Relationship.parent, person2));
             tree.add(new Node(person2, Relationship.children, person1));
         }
-*/
         tree.add(new Node(person1,relationship,person2));
     }
+
+
+/*
     @Override
     public void appendBrotherSister(Person person1, Person person2){
         if(person1.getGender()=="male" && person2.getGender()=="male"){
@@ -38,6 +40,8 @@ public class ExampleFamily implements Out, FamilyTree, Search {
             tree.add(new Node(person2,Relationship.sister,person1));
         }
     }
+
+ */
     @Override
     public void printToConsole(String data) {
         System.out.println(data);
