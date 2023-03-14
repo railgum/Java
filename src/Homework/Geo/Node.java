@@ -15,7 +15,7 @@ public class Node {
 
     @Override
     public String toString() {
-        return String.format("<%s %s %s>", person1, relationship, person2);
+        return String.format("<%s %s %s %s>", person1, relationship, person2);
     }
 
 }
