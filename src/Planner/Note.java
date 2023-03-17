@@ -12,14 +12,14 @@ public class Note implements Comparable<Note>, CharSequence {
     private static int countId;
     private String dateTimeAddNote;
     private String deadLine;
-    private Person person;
+    private String person;
     private Priority priority;
     private String text;
     static {
         countId = 0;
     }
 
-    public Note(String text, Person person, String deadLine, Priority priority) {
+    public Note(String text, String person, String deadLine, Priority priority) {
         this.id = ++countId;
         this.dateTimeAddNote = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd:MM:yyyy - a hh:mm"));
         this.deadLine = deadLine;
@@ -48,11 +48,11 @@ public class Note implements Comparable<Note>, CharSequence {
         this.deadLine = deadLine;
     }
 
-    public Person getPerson() {
+    public String getPerson() {
         return person;
     }
 
-    public void setPerson(Person person) {
+    public void setPerson(String person) {
         this.person = person;
     }
 
