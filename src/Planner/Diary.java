@@ -19,13 +19,10 @@ public class Diary implements PrintTo,Search {
         this.notes = new ArrayList<>();
     }
     public void addNote(Note note){
+
         notes.add(note);
     }
-    public void getAllNotes(){
-        for (Note n:notes) {
-            System.out.println(n);
-        }
-    }
+
 
     @Override
     public void printToConsole() {
