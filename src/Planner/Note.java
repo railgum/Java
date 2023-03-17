@@ -7,7 +7,7 @@ import java.util.Locale;
 /**
  * Класс записи
  */
-public class Note implements Comparable<Note> {
+public class Note implements Comparable<Note>, CharSequence {
     private final int id;
     private static int countId;
     private String dateTimeAddNote;
@@ -71,6 +71,22 @@ public class Note implements Comparable<Note> {
     public void setText(String text) {
         this.text = text;
     }
+
+    @Override
+    public int length() {
+        return 0;
+    }
+
+    @Override
+    public char charAt(int index) {
+        return 0;
+    }
+
+    @Override
+    public CharSequence subSequence(int start, int end) {
+        return null;
+    }
+
     @Override
     public String toString(){
         return "#" + getId() + " " +

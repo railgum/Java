@@ -1,10 +1,22 @@
 package Planner;
 
-public class XmlFile implements FileFormat{
-    @Override
-    public <T extends Note> String formatStringFile(T note) {
-        return String.format(
-                """
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.StringReader;
+import java.io.StringWriter;
+
+public class XmlFile{
+    public String formatStringFile(Note note) {
+        Document document = stringToDocument(String.format("""
                         <xml>
                         <Note>
                         <id>%d</id>
@@ -15,6 +27,41 @@ public class XmlFile implements FileFormat{
                         <Priority>%s</Priority>
                         </Note>
                         </xml>
-                """, note.getId(), note.getText(), note.getPerson(), note.getDateTimeAddNote(), note.getDeadLine(), note.getPriority());
+                        """, note.getId(), note.getText(), note.getPerson(), note.getDateTimeAddNote(), note.getDeadLine(), note.getPriority()));
+        return documentToString(document);
     }
+    // конвертируем XML Document в строку
+    private static String documentToString(Document document) {
+        TransformerFactory tFactory = TransformerFactory.newInstance();
+        Transformer transfObject;
+        try {
+            transfObject = tFactory.newTransformer();
+            // здесь мы указываем, что хотим убрать XML declaration:
+            // тег <?xml ... ?> и его содержимое
+            transfObject.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+            StringWriter writer = new StringWriter();
+            transfObject.transform(new DOMSource(document), new StreamResult(writer));
+
+            // возвращаем преобразованный  в строку XML Document
+            return writer.getBuffer().toString();
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+    // парсим строку в XML Document
+    private static Document stringToDocument(String xmlStr) {
+        DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder;
+        try {
+            docBuilder = builderFactory.newDocumentBuilder();
+            // парсим переданную на вход строку с XML разметкой
+            return docBuilder.parse(new InputSource(new StringReader(xmlStr)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
