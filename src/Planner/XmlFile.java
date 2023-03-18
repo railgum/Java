@@ -36,13 +36,10 @@ public class XmlFile{
         Transformer transfObject;
         try {
             transfObject = tFactory.newTransformer();
-            // здесь мы указываем, что хотим убрать XML declaration:
-            // тег <?xml ... ?> и его содержимое
             transfObject.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
             StringWriter writer = new StringWriter();
             transfObject.transform(new DOMSource(document), new StreamResult(writer));
 
-            // возвращаем преобразованный  в строку XML Document
             return writer.getBuffer().toString();
         } catch (TransformerException e) {
             e.printStackTrace();
@@ -50,13 +47,11 @@ public class XmlFile{
 
         return null;
     }
-    // парсим строку в XML Document
     private static Document stringToDocument(String xmlStr) {
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder;
         try {
             docBuilder = builderFactory.newDocumentBuilder();
-            // парсим переданную на вход строку с XML разметкой
             return docBuilder.parse(new InputSource(new StringReader(xmlStr)));
         } catch (Exception e) {
             e.printStackTrace();
