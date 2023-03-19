@@ -2,6 +2,9 @@ package Homework.Geo;
 
 import java.time.LocalDate;
 
+import static Homework.Geo.Relationship.*;
+
+
 public class Main {
     public static void main(String[] args) {
         Person irina = new Person("Ирина","female", LocalDate.of(1925, 4, 17), LocalDate.of(1998, 12, 8));
@@ -12,18 +15,20 @@ public class Main {
         Person lena = new Person("Лена","female", LocalDate.of(1984, 11, 2), null);
 
         ExampleFamily gt = new ExampleFamily();
-        gt.appendChild(irina, vasya);
-        gt.appendChild(irina, masha);
-        gt.appendChild(vasya, jane);
-        gt.appendChild(vasya, ivan);
-        gt.appendChild(masha, lena);
-        gt.appendBrotherSister(vasya, masha);
+        gt.append(irina,parent, vasya, children);
+        gt.append(irina, parent, masha, children);
+        gt.append(vasya,parent, jane, children);
+        gt.append(vasya,parent, ivan, children);
+        gt.append(masha,parent, lena, children);
+        gt.append(vasya,brother, masha, Relationship.sister);
 
 
         //gt.printToConsole(gt.searchRelation(irina,children));
         //gt.printToConsole(gt.searchRelation(masha,brother));
         //gt.printToConsole(gt.bornAfterDate(LocalDate.of(1950,1,1)));
-        tagt.printToConsole(gt.getGender("male"));
+        //gt.printToConsole(gt.getGender("male"));
+        //gt.printToConsole(gt.search(irina, children));
+        gt.printToConsole(gt.getTree());
     }
 
 }

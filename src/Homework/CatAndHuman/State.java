@@ -4,7 +4,7 @@ public interface State {
 
     void move(String action);
 
-    //void isSleep(boolean sleep);
+    boolean isSleep();
 
-    //void isHungry(boolean hungry);
+    int isHungry();
 }

@@ -1,7 +1,9 @@
 package Homework.CatAndHuman;
 
+import java.util.Random;
+
 public class Cat extends Animal implements Speak, State {
-//    Random rnd = new Random();
+    Random rnd = new Random();
 
     public Cat(String name, int age, String color) {
         super(name,age,color);
@@ -16,16 +18,19 @@ public class Cat extends Animal implements Speak, State {
         System.out.println(action);
     }
 
-    /*
-    @Override
 
-    public void isSleep(boolean sleep) {
-        System.out.println(sleep);
-    }
     @Override
-    public void isHungry(boolean hungry) {
-        System.out.println(hungry);
+    public boolean isSleep() {
+        //System.out.println(sleep);
+        boolean sleep = rnd.nextBoolean();
+        return sleep;
     }
 
-     */
+    @Override
+    public int isHungry() {
+        int hungry = rnd.nextInt(0,10);
+        //System.out.println(hungry);
+        return hungry;
+    }
+
 }
