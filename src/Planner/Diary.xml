@@ -1,0 +1,46 @@
+<xml>
+<Note>
+<id>1</id>
+<Note>Сделать планировщик? Легко!</Note>
+<Author>Раиль Гумеров</Author>
+<Date>19:03:2023 - AM 01:34</Date>
+<Deadline>16-03-2023</Deadline>
+<Priority>низкая</Priority>
+</Note>
+</xml><xml>
+<Note>
+<id>2</id>
+<Note>Вроде всё понятно, но...</Note>
+<Author>Раиль Гумеров</Author>
+<Date>19:03:2023 - AM 01:34</Date>
+<Deadline>17-03-2023</Deadline>
+<Priority>средняя</Priority>
+</Note>
+</xml><xml>
+<Note>
+<id>3</id>
+<Note>Да как тут это делать то?</Note>
+<Author>Раиль Гумеров</Author>
+<Date>19:03:2023 - AM 01:34</Date>
+<Deadline>18-03-2023</Deadline>
+<Priority>высокая</Priority>
+</Note>
+</xml><xml>
+<Note>
+<id>4</id>
+<Note>Кто это у нас тут программист?</Note>
+<Author>Раиль Гумеров</Author>
+<Date>19:03:2023 - AM 01:34</Date>
+<Deadline>19-03-2023</Deadline>
+<Priority>дата увольнения</Priority>
+</Note>
+</xml><xml>
+<Note>
+<id>5</id>
+<Note>Вроде чо-то получилось</Note>
+<Author>Раиль</Author>
+<Date>19:03:2023 - AM 01:40</Date>
+<Deadline>20.03.2023</Deadline>
+<Priority>высокая</Priority>
+</Note>
+</xml>
