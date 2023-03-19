@@ -4,7 +4,7 @@ public enum Priority {
     low("низкая"),
     medium("средняя"),
     high("высокая"),
-    immediate("дата увольнения");
+    immediate("всё пропало");
 
     private String title;
     Priority(String title){

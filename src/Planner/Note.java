@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * Класс записи
  */
-public class Note implements Comparable<Note>, CharSequence {
+public class Note implements Comparable<Note> {
     private final int id;
     private static int countId;
     private String dateTimeAddNote;
