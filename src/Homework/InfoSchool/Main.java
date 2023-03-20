@@ -1,4 +1,4 @@
-package Homework.InfoScool;
+package Homework.InfoSchool;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,14 +1,14 @@
-package Homework.InfoScool;
+package Homework.InfoSchool;
 
 public abstract class Person {
     private String fullName;
     private int age;
-    private String gender;
 
-    public Person(String fullName, int age, String gender) {
+
+    public Person(String fullName, int age) {
         this.fullName = fullName;
         this.age = age;
-        this.gender = gender;
+
     }
 
     public String getFullName() {
@@ -27,11 +27,4 @@ public abstract class Person {
         this.age = age;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
 }
