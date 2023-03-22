@@ -55,6 +55,7 @@ public class Table {
                 ** 3 => Изменить должность
                 -------------------------------
                 ** 0 => Выход""");
+        return scanner.nextLine();
     }
    public String selectNews(){
        System.out.println("""

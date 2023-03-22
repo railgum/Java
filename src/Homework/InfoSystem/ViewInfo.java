@@ -36,7 +36,7 @@ public class ViewInfo {
                     listWorkers.changeEmployee();
                     break;
                 case "6":
-                    listWorkers.deleteEmployee();
+                    //listWorkers.deleteEmployee();
                     break;
                 case "7":
                     System.out.println("Подключение к каналу");

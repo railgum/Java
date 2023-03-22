@@ -64,14 +64,34 @@ public class ListWorkers {
         System.out.println("Введите ID сотрудника");
         Scanner scanner = new Scanner(System.in);
         int id = scanner.nextInt();
-        ListIterator<Employee> iterator = employees.listIterator();
-        while (iterator.hasNext()){
-            if(iterator.next().getId() == id){
-                switch (menu.selectForChange()){
-                    case "1":
-                        System.out.println("Введите новые имя и фамилию");
-                        String newName = scanner.nextLine();
-                        iterator.set();
+        boolean isExit = false;
+        for (Employee emp : employees) {
+            if(emp.getId() == id){
+                while (!isExit){
+                    switch (menu.selectForChange()){
+                        case "1":
+                            System.out.println("Введите новые имя и фамилию");
+                            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                            String newName = br.readLine();
+                            emp.setFullName(newName);
+                            break;
+                        case "2":
+                            System.out.println("Введите правильный возраст");
+                            BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
+                            int newAge = br2.read();
+                            emp.setAge(newAge);
+                            break;
+                        case "3":
+                            System.out.println("Введите новую должность");
+                            BufferedReader br3 = new BufferedReader(new InputStreamReader(System.in));
+                            String newPosition = br3.readLine();
+                            emp.setPosition(newPosition);
+                            break;
+                        case "0":
+                            isExit = true;
+                        default:
+                            System.out.println("Некорректный ввод");
+                    }
                 }
             }
         }
