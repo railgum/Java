@@ -1,6 +1,6 @@
-package Homework.InfoSchool;
+package Homework.InfoSystem;
 
-public abstract class Person {
+public abstract class Person{
     private String fullName;
     private int age;
 
@@ -26,5 +26,6 @@ public abstract class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
 
 }
