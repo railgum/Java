@@ -1,15 +1,15 @@
 package Homework.InfoSystem;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class ViewInfo {
-    private Scanner scanner;
+    private BufferedReader scanner;
     private Table table;
     private ListWorkers listWorkers;
     private Add add;
 
-    public ViewInfo(Scanner scanner, Table table, ListWorkers listWorkers, Add add) {
+    public ViewInfo(BufferedReader scanner, Table table, ListWorkers listWorkers, Add add) {
         this.scanner = scanner;
         this.table = table;
         this.listWorkers = listWorkers;

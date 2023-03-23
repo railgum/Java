@@ -1,6 +1,8 @@
 package Homework.InfoSystem;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Controller {
@@ -17,7 +19,7 @@ public class Controller {
             listWorkers.add(employee4);
             listWorkers.add(employee5);
 
-            Scanner scanner = new Scanner(System.in);
+            BufferedReader scanner = new BufferedReader(new InputStreamReader(System.in));
             Table table = new Table(scanner);
             Add add = new Add(scanner);
 

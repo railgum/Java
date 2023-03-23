@@ -1,14 +1,16 @@
 package Homework.InfoSystem;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Table {
-    private Scanner scanner;
+    private BufferedReader scanner;
 
-    public Table(Scanner scanner) {
+    public Table(BufferedReader scanner) {
         this.scanner = scanner;
     }
-    public String selectFunction(){
+    public String selectFunction() throws IOException {
         System.out.println("""
                 --------------------------------------
                 Добро пожаловать!
@@ -24,10 +26,10 @@ public class Table {
                 ---------------------------------------
                 ** 0 => Выход
                 """);
-        return scanner.nextLine();
+        return scanner.readLine();
     }
 
-    public String selectForChange(){
+    public String selectForChange() throws IOException {
         System.out.println("""
                 -------------------------------
                 Что вы хотите изменить?
@@ -37,16 +39,16 @@ public class Table {
                 ** 3 => Изменить должность
                 -------------------------------
                 ** 0 => Выход""");
-        return scanner.nextLine();
+        return scanner.readLine();
     }
-   public String selectNews(){
+   public String selectNews() throws IOException {
        System.out.println("""
                 ------------------------------
                 Подключение к соцсетям
                 ------------------------------
                 ** 0 => Выход
                 """);
-       return scanner.nextLine();
+       return scanner.readLine();
    }
 
 

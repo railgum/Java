@@ -15,7 +15,7 @@ public class ListWorkers {
 
     public ListWorkers() {
         this.employees = new ArrayList<>();
-        this.menu = new Table(new Scanner(System.in));
+        this.menu = new Table(new BufferedReader(new InputStreamReader(System.in)));
     }
     public void add(Employee employee){
         this.employees.add(employee);

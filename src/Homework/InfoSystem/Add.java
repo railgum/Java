@@ -1,23 +1,24 @@
 package Homework.InfoSystem;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Add {
-    private Scanner scanner;
+    private BufferedReader scanner;
 
-    public Add(Scanner scanner) {
+    public Add(BufferedReader scanner) {
         this.scanner = scanner;
     }
 
-    public Employee addNewEmployee(){
+    public Employee addNewEmployee() throws IOException {
         System.out.println("Добавляем нового сотрудника");
         System.out.println("Введите имя и фамилию");
-        String name = scanner.nextLine();
+        String name = scanner.readLine();
         System.out.println("Введите возраст");
-        int age = scanner.nextInt();
+        int age = Integer.parseInt(scanner.readLine());
         System.out.println("Введите должность");
-        String position = scanner.nextLine();
-        String enter = scanner.nextLine();
+        String position = scanner.readLine();
 
         return new Employee(name, age, position);
     }
