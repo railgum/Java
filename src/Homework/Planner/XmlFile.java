@@ -1,4 +1,4 @@
-package Planner;
+package Homework.Planner;
 
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;

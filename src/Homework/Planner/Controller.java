@@ -1,7 +1,7 @@
-package Planner;
+package Homework.Planner;
 
-import static Planner.Priority.*;
-import static Planner.Priority.immediate;
+import static Homework.Planner.Priority.*;
+import static Homework.Planner.Priority.immediate;
 
 public class Controller {
     public static void start() {

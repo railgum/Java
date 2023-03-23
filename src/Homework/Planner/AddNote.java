@@ -1,4 +1,4 @@
-package Planner;
+package Homework.Planner;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package Planner;
+package Homework.Planner;
 
 public enum Priority {
     low("низкая"),
