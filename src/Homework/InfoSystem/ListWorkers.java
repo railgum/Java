@@ -97,6 +97,18 @@ public class ListWorkers {
         }
 
     }
+    public void deleteEmployee(){
+        System.out.println("Введите ID сотрудника, которого хотите удалить");
+        Scanner scanner = new Scanner(System.in);
+        int id = scanner.nextInt();
+        ListIterator<Employee> listIterator = employees.listIterator();
+        while (listIterator.hasNext()){
+            if (listIterator.next().getId()==id){
+                listIterator.remove();
+            }
+        }
+
+    }
     public void sort(){
         Collections.sort(employees);
     }

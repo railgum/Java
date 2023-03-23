@@ -8,6 +8,7 @@ public class Add {
     public Add(Scanner scanner) {
         this.scanner = scanner;
     }
+
     public Employee addNewEmployee(){
         System.out.println("Добавляем нового сотрудника");
         System.out.println("Введите имя и фамилию");
@@ -16,6 +17,7 @@ public class Add {
         int age = scanner.nextInt();
         System.out.println("Введите должность");
         String position = scanner.nextLine();
+        String enter = scanner.nextLine();
 
         return new Employee(name, age, position);
     }

@@ -27,24 +27,6 @@ public class Table {
         return scanner.nextLine();
     }
 
-    public String searchByName(){
-        System.out.println("""
-                ------------------------------
-                Выберите фамилию
-                ------------------------------
-                ** => Выход
-                """);
-        return scanner.nextLine();
-    }
-    public String  searchByPosition(){
-        System.out.println("""
-                ------------------------------
-                Введите должность
-                ------------------------------
-                ** 0 => Выход
-                """);
-        return scanner.nextLine();
-    }
     public String selectForChange(){
         System.out.println("""
                 -------------------------------

@@ -30,7 +30,7 @@ public class Employee extends Person implements Comparable<Employee> {
     @Override
     public String toString() {
         return "Employee{" + this.getFullName() +
-                " position - '" + position + '\'' +
+                " position - '" + this.position + '\'' +
                 "| #ID - " + id +
                 '}';
     }
