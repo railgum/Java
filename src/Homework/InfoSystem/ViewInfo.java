@@ -4,10 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class ViewInfo {
-    private BufferedReader scanner;
-    private Table table;
-    private ListWorkers listWorkers;
-    private Add add;
+    private final BufferedReader scanner;
+    private final Table table;
+    private final ListWorkers listWorkers;
+    private final Add add;
 
     public ViewInfo(BufferedReader scanner, Table table, ListWorkers listWorkers, Add add) {
         this.scanner = scanner;
@@ -39,7 +39,7 @@ public class ViewInfo {
                     listWorkers.deleteEmployee();
                     break;
                 case "7":
-                    System.out.println("Подключение к каналу");
+                    table.selectNews();
                     break;
                 case "0":
                     System.exit(0);
