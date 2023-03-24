@@ -11,6 +11,7 @@ public class Controller {
             Employee employee3 = new Employee("Дмитрий Волков", 41, "Мастер");
             Employee employee4 = new Employee("Елена Дёмина", 23, "Слесарь");
             Employee employee5 = new Employee("Ренат Баев", 52, "Электрик");
+
             ListWorkers listWorkers = new ListWorkers();
             listWorkers.add(employee1);
             listWorkers.add(employee2);
@@ -21,9 +22,11 @@ public class Controller {
             BufferedReader scanner = new BufferedReader(new InputStreamReader(System.in));
             Table table = new Table(scanner);
             Add add = new Add(scanner);
+            Search search = new Search(listWorkers,table);
+            Change change = new Change(listWorkers);
+            Delete delete = new Delete(listWorkers);
 
-            ViewInfo viewInfo = new ViewInfo(scanner, table, listWorkers, add);
-
+            ViewInfo viewInfo = new ViewInfo(scanner, table, listWorkers, add, search,change,delete);
             viewInfo.printInfo();
         }
 }
