@@ -1,4 +1,4 @@
-package Planner;
+package Homework.Planner;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

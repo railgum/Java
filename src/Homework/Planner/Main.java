@@ -1,4 +1,4 @@
-package Planner;
+package Homework.Planner;
 
 public class Main {
     public static void main(String[] args) {

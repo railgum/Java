@@ -1,4 +1,4 @@
-package Planner;
+package Homework.Planner;
 
 import java.io.BufferedReader;
 import java.io.FileWriter;
@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  */
 public class Diary implements PrintTo,Search,AddNote {
     private final List<Note> notes;
-    private String path = "X:/Geek/Developer/2_block/Java/Java/src/Planner/Diary.";
+    private String path = "X:/Geek/Developer/2_block/Java/Java/src/Homework/Homework.Planner/Diary.";
     public Diary() {
         this.notes = new ArrayList<>();
     }
