@@ -36,21 +36,18 @@ public class ViewInfo {
                     listWorkers.printAll();
                     break;
                 case "2":
-                    search.searchBy();
-                    break;
-                case "3":
-                    //search.searchByPosition();
-                    break;
-                case "4":
                     listWorkers.add(add.addNewEmployee());
                     break;
+                case "3":
+                    search.searchBy();
+                    break;
+                case "4":
+                    change.changeBy();
+                    break;
                 case "5":
-                    change.changeEmployee();
+                    delete.deleteBy();
                     break;
                 case "6":
-                    delete.deleteEmployee();
-                    break;
-                case "7":
                     table.selectNews();
                     break;
                 case "0":

@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Search {
+public class Search implements Searcheable<Employee> {
     private ListWorkers listWorkers;
     private Table table;
 
@@ -15,11 +15,11 @@ public class Search {
         this.listWorkers = listWorkers;
         this.table = table;
     }
-
+    @Override
     public void searchBy() throws IOException {
         boolean isExit = false;
         while (!isExit){
-            switch (table.searchForSelect()){
+            switch (table.selectForSearch()){
                 case "1":
                     System.out.println("Поиск по фамилии");
                     System.out.println("Введите фамилию");
@@ -32,6 +32,7 @@ public class Search {
                         Matcher matcher = pattern.matcher(emp.getFullName());
                         if(matcher.find()){
                             count1++;
+                            System.out.println("Найдено:");
                             System.out.println(emp);
                         }
                     }
@@ -48,6 +49,7 @@ public class Search {
                     for (Employee emp:listWorkers.getEmployees()) {
                         if (emp.getPosition().toLowerCase().equals(text)){
                             count2++;
+                            System.out.println("Найдено:");
                             System.out.println(emp);
                         }
                     }
@@ -57,10 +59,10 @@ public class Search {
                     break;
                 case "0":
                     isExit = true;
+                    break;
                 default:
                     System.out.println("Некорректный ввод");
             }
         }
-
     }
 }

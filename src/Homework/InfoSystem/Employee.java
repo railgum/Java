@@ -29,10 +29,11 @@ public class Employee extends Person implements Comparable<Employee> {
 
     @Override
     public String toString() {
-        return "Employee{" + this.getFullName() +
-                " position - '" + this.position + '\'' +
-                "| #ID - " + id +
-                '}';
+        return "Сотрудник{ " + this.getFullName() +
+                " | должность - '" + this.position + '\'' +
+                " | возраст - " + this.getAge() +
+                " | #ID - " + id +
+                " }";
     }
     @Override
     public int compareTo(Employee emp){

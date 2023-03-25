@@ -23,10 +23,10 @@ public class Controller {
             Table table = new Table(scanner);
             Add add = new Add(scanner);
             Search search = new Search(listWorkers,table);
-            Change change = new Change(listWorkers);
-            Delete delete = new Delete(listWorkers);
+            Change change = new Change(listWorkers,table);
+            Delete delete = new Delete(listWorkers,table);
 
-            ViewInfo viewInfo = new ViewInfo(scanner, table, listWorkers, add, search,change,delete);
+            ViewInfo viewInfo = new ViewInfo(scanner,table,listWorkers,add,search,change,delete);
             viewInfo.printInfo();
         }
 }

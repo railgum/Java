@@ -1,6 +1,7 @@
 package Homework.InfoSystem;
 
+import java.io.IOException;
+
 public interface Deleteable<E> {
-    void deleteEmployee();
-    void deleteAll();
+    void deleteBy() throws IOException;
 }

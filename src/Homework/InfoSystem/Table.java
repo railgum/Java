@@ -2,7 +2,6 @@ package Homework.InfoSystem;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Table {
     private BufferedReader scanner;
@@ -17,12 +16,11 @@ public class Table {
                 Введите номер интересующего Вас пункта
                 --------------------------------------
                 ** 1 => Показать всех
-                ** 2 => Поиск сотрудника
-                ** 3 => 
-                ** 4 => Добавить сотрудника
-                ** 5 => Изменить данные сотрудника
-                ** 6 => Удалить сотрудника
-                ** 7 => Новости компании
+                ** 2 => Добавить
+                ** 3 => Поиск
+                ** 4 => Изменить данные
+                ** 5 => Удалить
+                ** 6 => Новости
                 ---------------------------------------
                 ** 0 => Выход
                 """);
@@ -42,13 +40,25 @@ public class Table {
                 """);
         return scanner.readLine();
     }
-    public String searchForSelect() throws IOException {
+    public String selectForSearch() throws IOException {
         System.out.println("""
                 -------------------------------
                 Найти сотрудника:
                 -------------------------------
                 ** 1 => по фамилии
                 ** 2 => по должности
+                -------------------------------
+                ** 0 => Выход
+                """);
+        return scanner.readLine();
+    }
+    public String selectForDelete() throws IOException{
+        System.out.println("""
+                -------------------------------
+                Удалить сотрудника:
+                -------------------------------
+                ** 1 => по ID
+                ** 2 => удалить всех
                 -------------------------------
                 ** 0 => Выход
                 """);
