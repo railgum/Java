@@ -39,13 +39,13 @@ public class ViewInfo {
                     listWorkers.add(add.addNewEmployee());
                     break;
                 case "3":
-                    search.searchBy();
+                    search.searchBy(scanner);
                     break;
                 case "4":
-                    change.changeBy();
+                    change.changeBy(scanner);
                     break;
                 case "5":
-                    delete.deleteBy();
+                    delete.deleteBy(scanner);
                     break;
                 case "6":
                     table.selectNews();

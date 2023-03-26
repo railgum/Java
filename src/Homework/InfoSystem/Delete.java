@@ -8,19 +8,21 @@ import java.util.ListIterator;
 public class Delete implements Deleteable<Employee> {
     private ListWorkers listWorkers;
     private Table table;
+    private BufferedReader bufferedReader;
 
     public Delete(ListWorkers listWorkers, Table table) {
         this.listWorkers = listWorkers;
         this.table = table;
     }
     @Override
-    public void deleteBy() throws IOException {
+    public void deleteBy(BufferedReader bufferedReader) throws IOException {
+        this.bufferedReader = bufferedReader;
         boolean isExit = false;
         while (!isExit){
             switch (table.selectForDelete()){
                 case "1":
                     System.out.println("Введите ID сотрудника, которого хотите удалить");
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+                    //BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
                     int id = Integer.parseInt(bufferedReader.readLine());
                     ListIterator<Employee> listIterator = listWorkers.getEmployees().listIterator();
                     int countID = 0;
@@ -37,8 +39,8 @@ public class Delete implements Deleteable<Employee> {
                     break;
                 case "2":
                     System.out.println("Вы действительно хотите удалить данные всех сотрудников? 1 - 'да'");
-                    BufferedReader brAll = new BufferedReader(new InputStreamReader(System.in));
-                    String answer = brAll.readLine();
+                    //BufferedReader brAll = new BufferedReader(new InputStreamReader(System.in));
+                    String answer = bufferedReader.readLine();
                     if("1".equals(answer)){
                         listWorkers.getEmployees().clear();
                     }

@@ -14,10 +14,9 @@ public class Change implements Changeable<Employee> {
         this.table = table;
     }
     @Override
-    public void changeBy() throws IOException {
+    public void changeBy(BufferedReader bufferedReader) throws IOException {
         System.out.println("Введите ID сотрудника");
-        Scanner scanner = new Scanner(System.in);
-        int id = scanner.nextInt();
+        int id = Integer.parseInt(bufferedReader.readLine());
         boolean isExit = false;
         for (Employee emp : listWorkers.getEmployees()) {
             if(emp.getId() == id){
@@ -27,21 +26,15 @@ public class Change implements Changeable<Employee> {
                     switch (table.selectForChange()){
                         case "1":
                             System.out.println("Введите новые имя и фамилию");
-                            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-                            String newName = br.readLine();
-                            emp.setFullName(newName);
+                            emp.setFullName(bufferedReader.readLine());
                             break;
                         case "2":
                             System.out.println("Введите правильный возраст");
-                            BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
-//                            int newAge = br2.read();
-                            emp.setAge(Integer.parseInt(br2.readLine()));
+                            emp.setAge(Integer.parseInt(bufferedReader.readLine()));
                             break;
                         case "3":
                             System.out.println("Введите новую должность");
-                            BufferedReader br3 = new BufferedReader(new InputStreamReader(System.in));
-                            String newPosition = br3.readLine();
-                            emp.setPosition(newPosition);
+                            emp.setPosition(bufferedReader.readLine());
                             break;
                         case "0":
                             isExit = true;
