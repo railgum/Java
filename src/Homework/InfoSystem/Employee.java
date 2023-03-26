@@ -1,5 +1,7 @@
 package Homework.InfoSystem;
 
+import java.util.Objects;
+
 public class Employee extends Person implements Comparable<Employee> {
     private final int id;
     private String position;
@@ -7,8 +9,6 @@ public class Employee extends Person implements Comparable<Employee> {
     static {
         countId = 0;
     }
-
-
 
     public Employee(String fullName, int age, String position) {
         super(fullName, age);
@@ -29,13 +29,26 @@ public class Employee extends Person implements Comparable<Employee> {
 
     @Override
     public String toString() {
-        return "Employee{" + this.getFullName() +
-                " position - '" + this.position + '\'' +
-                "| #ID - " + id +
-                '}';
+        return "Сотрудник{ " + this.getFullName() +
+                " | должность - '" + this.position + '\'' +
+                " | возраст - " + this.getAge() +
+                " | #ID - " + id +
+                " }";
     }
     @Override
     public int compareTo(Employee emp){
         return this.getFullName().compareTo(emp.getFullName());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee employee)) return false;
+        return id == employee.id && position.equals(employee.position);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, position);
     }
 }

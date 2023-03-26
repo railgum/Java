@@ -19,6 +19,7 @@ public class Add {
         int age = Integer.parseInt(scanner.readLine());
         System.out.println("Введите должность");
         String position = scanner.readLine();
+        System.out.printf("Добавляем: %s, должность: %s, возраст: %s \n",name,position,age);
 
         return new Employee(name, age, position);
     }
