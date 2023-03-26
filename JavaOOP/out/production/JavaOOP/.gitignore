@@ -1,0 +1,7 @@
+L*/S*
+L*/L*
+L*/H*/D*
+
+# Project exclude paths
+/out/
+..\.vscode\*

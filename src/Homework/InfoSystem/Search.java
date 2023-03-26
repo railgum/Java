@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 public class Search implements Searcheable<Employee> {
     private ListWorkers listWorkers;
     private Table table;
+    private BufferedReader br;
 
     public Search(ListWorkers listWorkers, Table table) {
 
@@ -16,15 +17,15 @@ public class Search implements Searcheable<Employee> {
         this.table = table;
     }
     @Override
-    public void searchBy() throws IOException {
+    public void searchBy(BufferedReader br) throws IOException {
+        this.br = br;
         boolean isExit = false;
         while (!isExit){
             switch (table.selectForSearch()){
                 case "1":
                     System.out.println("Поиск по фамилии");
                     System.out.println("Введите фамилию");
-                    BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
-                    String textName = br1.readLine();
+                    String textName = br.readLine();
                     String temp = String.format("\\s\\%s", textName);
                     Pattern pattern = Pattern.compile(temp);
                     int count1 = 0;
@@ -43,8 +44,7 @@ public class Search implements Searcheable<Employee> {
                 case "2":
                     System.out.println("Поиск по должности");
                     System.out.println("Введите должность сотрудника");
-                    BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
-                    String text = br2.readLine().toLowerCase();
+                    String text = br.readLine().toLowerCase();
                     int count2 = 0;
                     for (Employee emp:listWorkers.getEmployees()) {
                         if (emp.getPosition().toLowerCase().equals(text)){

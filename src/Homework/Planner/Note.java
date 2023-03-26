@@ -85,5 +85,14 @@ public class Note implements Comparable<Note> {
         return this.id - note.getId();
     }
 
-
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this){
+            return true;
+        }
+        if (obj==null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        return false;
+    }
 }
