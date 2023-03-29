@@ -1,6 +1,6 @@
 package Homework.Final;
 
-public class Phone implements Callable {
+public abstract class Phone implements Callable {
     private String brandName;
     private String modelName;
     private String dateProduction;
@@ -9,10 +9,6 @@ public class Phone implements Callable {
         this.brandName = brandName;
         this.modelName = modelName;
         this.dateProduction = dateProduction;
-    }
-    @Override
-    public void call(){
-        System.out.println("Намираем ноберок!!!");
     }
 
     public String getBrandName() {
@@ -38,4 +34,5 @@ public class Phone implements Callable {
     public void setDateProduction(String dateProduction) {
         this.dateProduction = dateProduction;
     }
+
 }

@@ -1,5 +1,5 @@
 package Homework.Final;
 
 public interface Internetable {
-    void connect();
+    void connect(String webPage);
 }

@@ -1,5 +1,5 @@
 package Homework.Final;
 
 public interface Moveable {
-    void move();
+    void move(String place);
 }
